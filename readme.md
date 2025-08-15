@@ -4,10 +4,11 @@
 Criar um ambiente Node.js com TypeScript e executar o primeiro código.
 
 ## 📂 Estrutura do Projeto
-
 src/
 app.ts
+
 package.json
+
 tsconfig.json
 
 ## ⚙️ Passos
@@ -17,39 +18,46 @@ tsconfig.json
 npm init -y
 npm install typescript ts-node nodemon @types/node
 npx tsc --init
+```
 
------
-
-2.**Configurar tsconfig.json**
+2. **Configurar tsconfig.json**
+``` bash
 {
   "compilerOptions": {
     "target": "ES2020",
     "module": "commonjs",
     "outDir": "./dist",
     "rootDir": "./src",
-    "strict": true,
     "esModuleInterop": true
   }
 }
+```
 
-------
 
 3. **Criar arquivo src/app.ts**
-console.log("Hello, TypeScript!");
 
-4. **Scripts no package.json**
+``` ts
+console.log("Hello, TypeScript!");
+```
+
+5. **Scripts no package.json**
+```bash
 "scripts": {
   "start:dev": "nodemon src/app.ts",
   "build": "tsc",
   "start": "node dist/app.js"
 }
+```
 
 ▶️ Executando
+
 Modo desenvolvimento
-``bash
+```
 npm run start:dev
+```
 
 Modo produção
-``bash
+```bash
 npm run build
+
 npm start
